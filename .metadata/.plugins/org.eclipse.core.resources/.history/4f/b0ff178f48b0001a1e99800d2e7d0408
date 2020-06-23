@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>세부쪽지</title>
+	<style>
+	.msgDetail { grid-area: main; height: 405px; margin: 0 300px 0 0; width: 485px;}
+	</style>
+
+
+</head>
+<body>
+
+	<div class="msgDetail">
+		<div class="tablenick_send" text-align="left">보낸 사람 : ${message.nickname_send}</div>
+		<div class="tablenick_receive" text-align="right">받는 사람 : ${message.nickname_receive}</div>
+		<div class="tablemessage">${message.message}</div>
+		<div class="tabledate" text-align="right">${message.date}</div>
+	
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+		function clickFunc() {
+			window.close();
+		}
+</script>
+<meta charset="UTF-8">
+<title>댓글 수정</title>
+</head>
+<body>
+	<form action="cmtRev.bill" method="post">
+		<textarea rows="10" cols="50" name="commentDetail">${cmtCheck.comment}</textarea>
+		<h3>입력 일자 : ${cmtCheck.insertdate}</h3>
+		<input type="hidden" name="cmtseq" value="${cmtCheck.cmtseq}">
+		<input type="submit" value="수정"> <a href = "cmtDel.bill?cmtseq=${cmtCheck.cmtseq}">삭제</a> <button onclick="clickFunc();">닫기</button>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>댓글 수정</title>
+</head>
+<body>
+	<form action="cmtRev.bill" method="post">
+		<textarea rows="10" cols="50" name="commentDetail">${cmtCheck.comment}</textarea>
+		<input type="submit" value="수정"> <a href = "cmtDel.bill?cmtseq=${cmtCheck.cmtseq}">삭제</a>
+	
+		
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BcommentRUDCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		
+		int prdseq = Integer.parseInt(request.getParameter("prdseq"));
+		int cmtseq = Integer.parseInt(request.getParameter("cmtseq"));
+		String nickname = request.getParameter("mynick");
+		String cmtstate = request.getParameter("cmtstate");
+		
+		String mynick = "수키";
+		//System.out.println(rentSeq);OK
+		Dao dao = new Dao();
+		
+		dao.SendMessage(mynick, nickname, message);
+		
+		
+	}
+
+}

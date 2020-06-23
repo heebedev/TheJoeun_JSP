@@ -1,0 +1,39 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BprdRUDCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		int prdseq = Integer.parseInt(request.getParameter("prdseq"));
+		String comment = request.getParameter("comment");
+		String nickname = request.getParameter("nickname");
+		String cmtstate;
+		
+			if (nickname != null) {
+				prdseq = Integer.parseInt(request.getParameter("prdseq"));
+				cmtstate = "수정";
+				
+
+			} else {
+				cmtstate = "삭제";
+				
+			}
+		
+		//System.out.println(rentSeq);OK
+		Dao dao = new Dao();
+		
+		dao.commentRUD(cmtseq, prdseq, nickname, comment);
+		
+		request.setAttribute("cmtstate", cmtstate);
+		
+
+	}
+
+}

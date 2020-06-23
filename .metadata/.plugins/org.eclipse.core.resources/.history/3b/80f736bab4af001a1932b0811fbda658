@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쪽지보내기</title>
+	<style>
+	.item1 { height: 500px; margin: 0 300px 0 300px; width: 500px; float: center;}
+	
+	
+	</style>
+</head>
+<body>	
+	
+	<div class="item1">
+		<form action="messageWin.bill" method="post" align = "center">
+			<div width="450px" style="float: left">받는 사람 : <input type="text" name="nickname" value="${usinfo.nickname}" readonly="readonly"></div>
+			<div width="450px" style="vertical-align: center"> 내용 <textarea rows="10" cols="50" name="message"></textarea> </div>
+			<div width="450px"><input type="submit" value="보내기"> </div>
+		</form>
+	</div>
+
+</body>
+</html>

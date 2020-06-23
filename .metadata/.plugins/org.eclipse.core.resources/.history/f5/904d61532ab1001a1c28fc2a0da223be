@@ -1,0 +1,27 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BborrowCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+
+		
+		int prdseq = Integer.parseInt(request.getParameter("brprdseq"));
+		String nickname = request.getParameter("brmynick");
+		String startDate = request.getParameter("syy")+"-"+request.getParameter("smm")+"-"+request.getParameter("sdd");
+		String endDate = request.getParameter("eyy")+"-"+request.getParameter("emm")+"-"+request.getParameter("edd");
+		
+		Dao dao = new Dao();
+		
+		dao.borrowAct(prdseq, startDate, endDate);
+		
+		
+	}
+
+}

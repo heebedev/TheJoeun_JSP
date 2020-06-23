@@ -1,0 +1,33 @@
+package com.blgy.command;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+import com.blgy.dto.CmtDto;
+import com.blgy.dto.PrdDto;
+import com.blgy.dto.UserDto;
+
+
+public class BpdDetailCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		int prdseq = Integer.parseInt(request.getParameter("prdseq"));
+		//System.out.println(rentSeq);OK
+		Dao dao = new Dao();
+		
+		PrdDto dtos = dao.pdDetail(prdseq);
+		
+		ArrayList<CmtDto> cmddtos = dao.cmtDetail(prdseq);
+		
+		request.setAttribute("pdDetail", dtos);
+		request.setAttribute("cmtDetail", cmddtos);
+		
+	}
+
+}

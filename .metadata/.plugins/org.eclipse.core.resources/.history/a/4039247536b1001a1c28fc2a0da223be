@@ -1,0 +1,61 @@
+package com.blgy.dto;
+
+public class InteractDto {
+	
+	int likeseq;
+	int userseq;
+	int prdseq;
+	int liked;
+	
+	public InteractDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getLikeseq() {
+		return likeseq;
+	}
+
+	public void setLikeseq(int likeseq) {
+		this.likeseq = likeseq;
+	}
+
+	public int getUserseq() {
+		return userseq;
+	}
+
+	public void setUserseq(int userseq) {
+		this.userseq = userseq;
+	}
+
+	public int getPrdseq() {
+		return prdseq;
+	}
+
+	public void setPrdseq(int prdseq) {
+		this.prdseq = prdseq;
+	}
+
+	public int getLiked() {
+		return liked;
+	}
+
+	public void setLiked(int liked) {
+		this.liked = liked;
+	}
+
+	
+	
+	public InteractDto(int likeseq, int userseq, int prdseq, int liked) {
+		super();
+		this.likeseq = likeseq;
+		this.userseq = userseq;
+		this.prdseq = prdseq;
+		this.liked = liked;
+	}
+	
+	
+	
+	
+	
+
+}

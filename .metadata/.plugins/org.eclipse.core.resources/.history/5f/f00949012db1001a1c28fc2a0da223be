@@ -1,0 +1,56 @@
+package com.blgy.command;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BborrowCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+
+		
+		int prdseq = Integer.parseInt(request.getParameter("brprdseq"));
+		String nickname = request.getParameter("brmynick");
+		String sDate = request.getParameter("syy")+request.getParameter("smm")+request.getParameter("sdd");
+		String eDate = request.getParameter("eyy")+request.getParameter("emm")+request.getParameter("edd");
+		
+		System.out.println(prdseq);
+		System.out.println(nickname);
+		System.out.println(sDate);
+		System.out.println(eDate);
+		
+		
+	    String startDate = "";
+	    String endDate = "";
+	    
+		SimpleDateFormat beforeFormat = new SimpleDateFormat("yymmdd");
+		//Date로 변경하기 위해 날짜 형식을 yyyy-mm-dd로 변경
+		SimpleDateFormat afterFormat = new SimpleDateFormat("yyyy-mm-dd");
+		Date tempDate = null;
+		Date tempDate2 = null;
+			    
+		//yyyymmdd로된 날짜 형식으로 java.util.Date객체를 만듬
+		tempDate = beforeFormat.parse(sDate);
+		tempDate2 = beforeFormat.parse(eDate);
+			   
+		//Date를 yyyy-mm-dd 형식으로 변경하여 String으로 반환
+		startDate = afterFormat.format(tempDate);
+		endDate = afterFormat.format(tempDate2);
+	    
+	    System.out.println("startDate: " + startDate); // 2019-04-28
+	    System.out.println("endDate: " + endDate); // 2019-05-05
+		
+		Dao dao = new Dao();
+		
+		dao.borrowAct(prdseq, nickname, startDate, endDate);
+		
+		
+	}
+
+}

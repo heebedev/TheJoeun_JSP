@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>세부쪽지</title>
+	<style>
+		.msgDetail { grid-area: main; height: 405px; margin: 0 300px 0 0; width: 485px;}
+	</style>
+
+
+</head>
+<body>
+
+	<div class="msgDetail">
+		
+	
+	</div>
+
+</body>
+</html>

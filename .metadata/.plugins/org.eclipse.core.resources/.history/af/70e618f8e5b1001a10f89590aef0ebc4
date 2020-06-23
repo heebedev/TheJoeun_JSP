@@ -1,0 +1,25 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+import com.blgy.dto.CmtDto;
+
+public class BcommentCheckCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		int cmtseq = Integer.parseInt(request.getParameter("cmtseq"));
+		
+		Dao dao = new Dao();
+		
+		CmtDto dtos = dao.cmtCheck(cmtseq);
+		
+		request.setAttribute("msgDetail", dtos);
+
+	}
+
+}

@@ -1,0 +1,86 @@
+package com.blgy.dto;
+
+public class CmtDto {
+	
+	int cmtseq;
+	String nickname;
+	String comment;
+	String insertdate;
+	String cmtRev;
+	String cmtDel;
+	
+	public CmtDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	
+	public CmtDto(int cmtseq,  String nickname, String comment, String insertdate, String cmtRev, String cmtDel) {
+		super();
+		this.cmtseq = cmtseq;
+		this.nickname = nickname;
+		this.comment = comment;
+		this.insertdate = insertdate;
+		this.cmtRev = cmtRev;
+		this.cmtDel = cmtDel;
+	}
+
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public String getInsertdate() {
+		return insertdate;
+	}
+
+	public void setInsertdate(String insertdate) {
+		this.insertdate = insertdate;
+	}
+
+
+
+	public String getCmtRev() {
+		return cmtRev;
+	}
+
+	public void setCmtRev(String cmtRev) {
+		this.cmtRev = cmtRev;
+	}
+	public String getCmtDel() {
+		return cmtDel;
+	}
+	
+	public void setCmtDel(String cmtDel) {
+		this.cmtDel = cmtDel;
+	}
+
+
+
+	public int getCmtseq() {
+		return cmtseq;
+	}
+
+
+
+	public void setCmtseq(int cmtseq) {
+		this.cmtseq = cmtseq;
+	}
+	
+	
+	
+	
+
+}

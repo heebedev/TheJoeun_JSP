@@ -1,0 +1,29 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BcommentAddCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+
+		String prdseq = request.getParameter("prdseq");
+		String mynick = request.getParameter("mynick");
+		String comment = request.getParameter("cmtTxt");
+		
+		System.out.println(prdseq);
+		System.out.println(mynick);
+		System.out.println(comment);
+		//System.out.println(rentSeq);OK
+		Dao dao = new Dao();
+		
+		dao.AddComment(prdseq, mynick, comment);
+		
+		
+	}
+
+}

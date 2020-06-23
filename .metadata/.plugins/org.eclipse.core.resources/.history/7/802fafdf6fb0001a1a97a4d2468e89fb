@@ -1,0 +1,5 @@
+package com.blgy.dto;
+
+public class CmtDto {
+
+}

@@ -1,0 +1,42 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>쪽지보내기</title>
+</head>
+<body>	
+	
+
+	<form action="messageWin.bill" method="post">
+		받는 사람 : <input type="text" name="nickname" value="${usinfo.nickname}" readonly="readonly"><br>
+		내용 <br>
+		<textarea rows="10" cols="50" name="message"></textarea><br>
+		<button onclick="popup();">보내기</button>
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+<html>
+<head>
+<title>pop post</title>
+<script>
+function popup() {
+var win = window.open("", "PopupWin", "");
+document.PopForm.submit();
+}
+</script>
+</head>
+<body>
+<button onclick="popup();">팝업</button>
+<form name="PopForm" action="target.html" method="post" target="PopupWin">
+<input type="text" value="TEST" />
+</form>
+</body>
+</html>

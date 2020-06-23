@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="false"/>
+	<item key="J2EE_EXPORT_SOURCE" value="true"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.5"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="/Users/tj/Documents/SEUNGHEE/2차 pjt/webPJT2_Test_0612.war"/>
+		<item value="/Users/tj/Documents/SEUNGHEE/2차 pjt/webPJT2_Test_0611.war"/>
+		<item value="/Users/tj/Documents/SEUNGHEE/2차 pjt/webPJT2_Test_0610.war"/>
+		<item value="/Users/tj/Desktop/OLBoard.war"/>
+		<item value="/Users/tj/Documents/SEUNGHEE/WAR file/MVCBoard.war"/>
+		<item value="/Users/tj/Documents/SEUNGHEE/WAR file/Servlets.war"/>
+	</list>
+	<list key="J2EE_IMPORT_null">
+		<item value="/Users/tj/Documents/SEUNGHEE/JSP/WorkSpace/ExpressionLang.war"/>
+		<item value="/Users/tj/Documents/SEUNGHEE/JSP/WorkSpace/JSTL.war"/>
+	</list>
+</section>

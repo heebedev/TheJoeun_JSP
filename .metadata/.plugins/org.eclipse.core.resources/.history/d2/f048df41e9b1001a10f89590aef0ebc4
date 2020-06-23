@@ -1,0 +1,33 @@
+package com.blgy.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+
+public class BcommentRUDCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+		
+		int cmtseq = Integer.parseInt(request.getParameter("cmtseq"));
+		String comment = request.getParameter("comment");
+		String cmtstate;
+		
+			if (comment == null) {
+				cmtstate = "삭제";
+			} else {
+				cmtstate = "수정";
+			}
+		
+		//System.out.println(rentSeq);OK
+		Dao dao = new Dao();
+		
+		dao.commentRUD(cmtseq, cmtstate);
+		
+		
+	}
+
+}

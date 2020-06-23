@@ -1,0 +1,108 @@
+package com.blgy.homecontroller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.command.BCommand;
+import com.blgy.command.BborrowCommand;
+import com.blgy.command.BcommentAddCommand;
+import com.blgy.command.BcommentRUDCommand;
+import com.blgy.command.BmessageCommand;
+import com.blgy.command.BmessageListCommand;
+import com.blgy.command.BpdDetailCommand;
+import com.blgy.command.BusDetailCommand;
+import com.blgy.command.BusInfoCommand;
+
+@WebServlet("*.bill")
+public class HomeCtrl extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public HomeCtrl() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		actionDo(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		actionDo(request, response);
+	}
+
+		
+	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setCharacterEncoding("utf-8");
+		String uri=request.getRequestURI();
+		String conPath=request.getContextPath();
+		String com = uri.substring(conPath.length());
+		String viewPage = null;
+		BCommand command = null;
+
+		switch(com) { 
+			case("/home.bill"):   
+				break;
+			case("/login.bill"): 
+				break;
+			case("/signin.bill"):
+				viewPage = "signin.jsp";
+				break;
+			case("/productDetail.bill") :
+				command = new BpdDetailCommand();
+				command.execute(request, response);
+				viewPage = "productDetail.jsp";
+				break;
+			case("/userinfoDetail.bill") :
+				command = new BusDetailCommand();
+				command.execute(request, response);
+				viewPage = "userinfoDetail.jsp";
+				break;
+			case("/messageSend.bill") :
+				command = new BusInfoCommand();
+				command.execute(request, response);
+				viewPage = "messageSend.jsp";
+				break;
+			case("/messageWin.bill") :
+				command = new BmessageCommand();
+				command.execute(request, response);
+				viewPage = "messageConfirm.jsp";
+				break;
+			case("/message.bill") :
+				command = new BmessageListCommand();
+				command.execute(request, response);
+				viewPage = "messageFinal.jsp";
+				break;
+			case("/commentAdd.bill") :
+				command = new BcommentAddCommand();
+				command.execute(request, response);
+				viewPage = "commentConfirm.jsp";
+				break;
+			case("/commentRUD.bill") :
+				command = new BcommentRUDCommand();
+				command.execute(request, response);
+				viewPage = "commentRevConfirm.jsp";
+				break;
+			case("/commentDetail.bill") :
+				command = new BcommentCheckCommand();
+				command.execute(request, response);
+				viewPage = "commentRevConfirm.jsp";
+				break;
+			case("/borrow.bill") :
+				command = new BborrowCommand();
+				command.execute(request, response);
+				viewPage = "borrowConfirm.jsp";
+				break;
+		}
+		
+		
+		
+		RequestDispatcher dispatcher =request.getRequestDispatcher(viewPage);
+		
+		dispatcher.forward(request, response);
+	}
+}

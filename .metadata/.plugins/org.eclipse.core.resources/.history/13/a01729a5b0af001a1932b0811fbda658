@@ -1,0 +1,52 @@
+package com.blgy.command;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.blgy.dao.Dao;
+import com.blgy.dto.UserDto;
+
+
+
+public class BmessageListCommand implements BCommand {
+
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+
+		Dao dao = new Dao();   //하자마자 데이터 연결됐다.
+		
+		String mynick = "수키";
+		String selection = request.getParameter("selection");
+			if (selection == null) {
+				selection = "total";
+			}
+			
+		String search = request.getParameter("search");
+		if (search == null) {
+			search = "message";
+		} else {
+			selection = "total";
+		}
+		
+		String searchText = request.getParameter("searchText");
+		if (searchText == null) {
+			searchText = "";
+		}
+		
+		
+		
+		System.out.println(selection);
+		ArrayList<UserDto> dtos = dao.messageList(mynick, selection, search, searchText);
+		
+		request.setAttribute("messageList", dtos);
+		
+		//리퀘스트에 dtos 어레이리스트를 묶어서 보낸다.
+		
+		
+		
+	}
+
+}
